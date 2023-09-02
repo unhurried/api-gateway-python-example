@@ -4,7 +4,7 @@ from aws_cdk import (aws_apigateway as apigateway,
                      aws_s3 as s3,
                      aws_lambda as lambda_)
 
-class WidgetService(Construct):
+class MyService(Construct):
     def __init__(self, scope: Construct, id: str):
         super().__init__(scope, id)
 
@@ -14,17 +14,17 @@ class WidgetService(Construct):
                 compatible_runtimes=[lambda_.Runtime.PYTHON_3_11])
 
         handler = lambda_.Function(
-                self, "WidgetHandler",
+                self, "MyHandler",
                 runtime=lambda_.Runtime.PYTHON_3_11,
                 code=lambda_.Code.from_asset("resources"),
                 handler="handler.handler",
                 layers=[layer])
 
-        api = apigateway.RestApi(self, "widgets-api",
-                  rest_api_name="Widget Service",
-                  description="This service serves widgets.")
+        api = apigateway.RestApi(self, "my-api",
+                  rest_api_name="My Service",
+                  description="This service serves apis.")
 
-        get_widgets_integration = apigateway.LambdaIntegration(handler,
+        get_api_integration = apigateway.LambdaIntegration(handler,
                 request_templates={"application/json": '{ "statusCode": "200" }'})
 
-        api.root.add_method("GET", get_widgets_integration)   # GET /
+        api.root.add_method("GET", get_api_integration)   # GET /

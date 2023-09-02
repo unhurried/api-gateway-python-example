@@ -23,6 +23,12 @@ pip install -r lambda_layer/requirements.txt -t lambda_layer/python
 cdk synth
 ```
 
+To run the api locally using AWS SAM CLI:
+
+```bash
+sam local start-api -t ./cdk.out/ApiGwPythonExampleStack.template.json 
+```
+
 To deploy the generated CloudFormation template:
 
 ```bash

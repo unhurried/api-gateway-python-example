@@ -1,4 +1,4 @@
-# api-gw-python-example
+# backend-example-serverless-python
 
 An example of Python-based Restful API implemented with AWS Cloud Development Kit (CDK).    
 This project also includes devcontainer.json that can be used to run AWS CDK CLI commands.
@@ -26,7 +26,7 @@ cdk synth
 To run the api locally using AWS SAM CLI:
 
 ```bash
-sam local start-api -t ./cdk.out/ApiGwPythonExampleStack.template.json 
+sam local start-api -t ./cdk.out/BackendExampleServerlessPythonStack.template.json 
 ```
 
 To deploy the generated CloudFormation template:

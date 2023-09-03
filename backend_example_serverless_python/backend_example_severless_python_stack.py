@@ -6,7 +6,7 @@ from aws_cdk import (
 from constructs import Construct
 from . import my_handler
 
-class ApiGwPythonExampleStack(Stack):
+class BackendExampleServerlessPythonStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -17,6 +17,6 @@ class ApiGwPythonExampleStack(Stack):
 
         # example resource
         # queue = sqs.Queue(
-        #     self, "ApiGwPythonExampleQueue",
+        #     self, "BackendExampleServerlessPythonQueue",
         #     visibility_timeout=Duration.seconds(300),
         # )

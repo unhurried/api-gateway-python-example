@@ -3,11 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from api_gw_python_example.api_gw_python_example_stack import ApiGwPythonExampleStack
+from backend_example_serverless_python.backend_example_severless_python_stack import BackendExampleServerlessPythonStack
 
 
 app = cdk.App()
-ApiGwPythonExampleStack(app, "ApiGwPythonExampleStack",
+BackendExampleServerlessPythonStack(app, "BackendExampleServerlessPythonStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
